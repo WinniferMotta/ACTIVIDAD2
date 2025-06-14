@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ACTIVIDAD2</title>
+    <!-- Enlace a Bootstrap CSS para el estilo de la aplicación -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Estilos CSS personalizados para mejorar la apariencia -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif; /* Fuente recomendada para una apariencia moderna */
+            padding-top: 20px;
+            background-color: #f8f9fa; /* Un color de fondo claro y agradable */
+        }
+        .container {
+            max-width: 960px; /* Establece un ancho máximo para el contenido principal */
+            background-color: #ffffff; /* Fondo blanco para el contenedor */
+            padding: 30px;
+            border-radius: 8px; /* Bordes redondeados para un aspecto suave */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #343a40; /* Color oscuro para los encabezados */
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .form-group label {
+            font-weight: bold; /* Etiquetas de formulario en negrita */
+            margin-bottom: 5px;
+            display: block; /* Asegura que la etiqueta esté en su propia línea */
+        }
+        .form-control {
+            border-radius: 5px; /* Bordes redondeados para los campos de entrada */
+            border: 1px solid #ced4da;
+            padding: 10px;
+        }
+        .btn {
+            border-radius: 5px; /* Bordes redondeados para los botones */
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #218838;
+        }
+        .btn-warning {
+            background-color: #ffc107;
+            border-color: #ffc107;
+            color: #212529; /* Color de texto más oscuro para contraste */
+        }
+        .btn-warning:hover {
+            background-color: #e0a800;
+            border-color: #e0a800;
+        }
+        .table {
+            margin-top: 20px;
+        }
+        .table thead th {
+            background-color: #343a40; /* Fondo oscuro para el encabezado de la tabla */
+            color: white; /* Texto blanco en el encabezado */
+        }
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.05); /* Rayas en la tabla para mejor legibilidad */
+        }
+        .text-danger {
+            font-size: 0.875em; /* Tamaño de fuente para mensajes de error */
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #6c757d;
+            border-top: 1px solid #e9ecef; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="ACTIVIDAD" asp-action="Index">ACTIVIDAD2</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ACTIVIDAD" asp-action="Index">Registrar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ACTIVIDAD" asp-action="Lista">Lista</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            &copy; 2025 - ACTIVIDAD2
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

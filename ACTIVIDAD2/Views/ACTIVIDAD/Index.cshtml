@@ -1,0 +1,78 @@
+﻿@model ACTIVIDAD2.Models.EstudiantesViewModels
+
+@{
+    
+    ViewData["Title"] = "Registro de Estudiante";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+
+<form asp-action="Registrar" method="post">
+ 
+    <div class="form-group">
+        <label asp-for="Matricula"></label>
+        <input asp-for="Matricula" class="form-control" />
+        
+        <span asp-validation-for="Matricula" class="text-danger"></span>
+    </div>
+
+   
+    <div class="form-group">
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+
+    
+    <div class="form-group">
+        <label asp-for="Apellido"></label>
+        <input asp-for="Apellido" class="form-control" />
+        <span asp-validation-for="Apellido" class="text-danger"></span>
+    </div>
+
+    
+    <div class="form-group">
+        <label asp-for="Carrera"></label>
+        
+        <select asp-for="Carrera" asp-items="Model.OpcionesCarrera" class="form-control"></select>
+        <span asp-validation-for="Carrera" class="text-danger"></span>
+    </div>
+
+   
+    <div class="form-group">
+        <label asp-for="Turno"></label>
+        <select asp-for="Turno" asp-items="Model.OpcionesTurno" class="form-control"></select>
+        <span asp-validation-for="Turno" class="text-danger"></span>
+    </div>
+
+  
+    <div class="form-group">
+        <label asp-for="TipoIngreso"></label>
+        <select asp-for="TipoIngreso" asp-items="Model.OpcionesTipoIngreso" class="form-control"></select>
+        <span asp-validation-for="TipoIngreso" class="text-danger"></span>
+    </div>
+
+   
+    <div class="form-check">
+        <input asp-for="EstaBecado" class="form-check-input" />
+        <label asp-for="EstaBecado" class="form-check-label"></label>
+    </div>
+
+    
+    <div class="form-group">
+        <label asp-for="PorcentajeBeca"></label>
+        <input asp-for="PorcentajeBeca" class="form-control" />
+        <span asp-validation-for="PorcentajeBeca" class="text-danger"></span>
+    </div>
+
+   
+    <button type="submit" class="btn btn-primary">Registrar</button>
+</form>
+
+@section Scripts {
+    @{
+        
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
